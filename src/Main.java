@@ -1,3 +1,8 @@
+import Lexer.Lexer;
+import Node.Node;
+import Parser.Parser;
+import Token.Token;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -11,5 +16,10 @@ public class Main {
         Lexer l = new Lexer(data);
         List<Token> tokens = l.parseInput();
         System.out.println(tokens.toString());
+
+        Parser parser = new Parser();
+        Node node = parser.parseList(tokens);
+
+        System.out.println(node);
     }
 }

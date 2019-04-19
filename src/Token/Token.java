@@ -1,3 +1,5 @@
+package Token;
+
 public class Token {
   private TokenTypes token;
   private String text;
@@ -25,19 +27,9 @@ public class Token {
 
   @Override
   public String toString() {
-    return "Token{" +
+    return "Token.Token{" +
       "token=" + token +
       ", text='" + text + '\'' +
       '}';
-  }
-
-  public enum TokenTypes {
-    STRING,
-    IDENTIFIER,
-    LEFT_PAREN,
-    RIGHT_PAREN,
-    SEMI_COLON,
-    COMMA,
-    EQUAL
   }
 }

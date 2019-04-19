@@ -1,3 +1,8 @@
+package Lexer;
+
+import Token.Token;
+import Token.TokenTypes;
+
 import java.text.CharacterIterator;
 import java.text.StringCharacterIterator;
 import java.util.ArrayList;
@@ -18,19 +23,19 @@ public class Lexer {
       if (current == ' ' || current == '\n') {
         current = iterator.next();
       } else if (current == '=') {
-        tokens.add(new Token(Token.TokenTypes.EQUAL, "="));
+        tokens.add(new Token(TokenTypes.EQUAL, "="));
         current = iterator.next();
       } else if (current == '(') {
-        tokens.add(new Token(Token.TokenTypes.LEFT_PAREN, "("));
+        tokens.add(new Token(TokenTypes.LEFT_PAREN, "("));
         current = iterator.next();
       } else if (current == ')') {
-        tokens.add(new Token(Token.TokenTypes.RIGHT_PAREN, ")"));
+        tokens.add(new Token(TokenTypes.RIGHT_PAREN, ")"));
         current = iterator.next();
       } else if (current == ',') {
-        tokens.add(new Token(Token.TokenTypes.COMMA, ","));
+        tokens.add(new Token(TokenTypes.COMMA, ","));
         current = iterator.next();
       } else if (current == ';') {
-        tokens.add(new Token(Token.TokenTypes.SEMI_COLON, ";"));
+        tokens.add(new Token(TokenTypes.SEMI_COLON, ";"));
         current = iterator.next();
       } else if (current == '"') {
         current = parseString(tokens, iterator);
@@ -52,7 +57,7 @@ public class Lexer {
       cur = iterator.next();
     }
 
-    tokens.add(new Token(Token.TokenTypes.STRING, str));
+    tokens.add(new Token(TokenTypes.STRING, str));
     cur = iterator.next();
     return cur;
   }
@@ -65,7 +70,7 @@ public class Lexer {
       cur = iterator.next();
     }
 
-    tokens.add(new Token(Token.TokenTypes.IDENTIFIER, str));
+    tokens.add(new Token(TokenTypes.IDENTIFIER, str));
     return cur;
   }
 }

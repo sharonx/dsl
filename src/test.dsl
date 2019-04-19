@@ -1,2 +1,1 @@
-foo = bar(get("host"));
-baz(foo);
+a, abd
