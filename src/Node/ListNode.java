@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListNode extends Node {
-  private List<String> list;
+  private List<Node> list;
 
   public ListNode() {
     this.list = new ArrayList<>();
   }
 
-  public void add(String s) {
-    list.add(s);
+  public void add(Node n) {
+    list.add(n);
   }
 
   @Override
